@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.MenuItemDetailPage"
+             Title="Detalii Produs">
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="nameEntry" Placeholder="Nume produs"/>
+        <Entry x:Name="descriptionEntry" Placeholder="Descriere"/>
+        <Entry x:Name="priceEntry" Placeholder="Preț" Keyboard="Numeric"/>
+        <Picker x:Name="categoryPicker" Title="Categorie">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Băuturi</x:String>
+                    <x:String>Aperitive</x:String>
+                    <x:String>Fel principal</x:String>
+                    <x:String>Desert</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Salvează" Clicked="OnSaveClicked"/>
+    </StackLayout>
+</ContentPage>

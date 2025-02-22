@@ -1,0 +1,13 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.RegisterPage"
+             Title="Înregistrare">
+    <StackLayout Padding="30" VerticalOptions="Center">
+        <Label Text="Înregistrare" FontSize="28" HorizontalOptions="Center" />
+        <Entry x:Name="usernameEntry" Placeholder="Utilizator" />
+        <Entry x:Name="passwordEntry" Placeholder="Parolă" IsPassword="True"/>
+        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirmare parolă" IsPassword="True"/>
+        <Button Text="Înregistrează-te" Clicked="OnRegisterClicked"/>
+        <Button Text="Înapoi la Login" Clicked="OnBackToLoginClicked"/>
+    </StackLayout>
+</ContentPage>

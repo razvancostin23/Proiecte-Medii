@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.ReservationPage"
+             Title="Rezervări">
+    <StackLayout Padding="10">
+        <Button Text="Adaugă Rezervare" Clicked="OnAddReservationClicked"/>
+        <ListView x:Name="reservationListView" ItemSelected="OnReservationSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding CustomerName}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="{Binding PhoneNumber}" FontSize="16"/>
+                            <Label Text="{Binding ReservationDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

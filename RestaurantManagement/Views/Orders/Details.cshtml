@@ -1,0 +1,38 @@
+﻿@model Order
+
+<h1>Order Details</h1>
+
+<div>
+    <h4>Order ID:</h4>
+    <p>@Model.Id</p>
+
+    <h4>Order Date:</h4>
+    <p>@Model.OrderTime</p>
+
+    <h4>Status:</h4>
+    <p>@Model.Status</p>
+
+    <h4>Ordered Products:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderDetails)
+            {
+                <tr>
+                    <td>@item.Product?.Name</td>
+                    <td>@item.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Cancel Order</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to Orders</a>
+</p>

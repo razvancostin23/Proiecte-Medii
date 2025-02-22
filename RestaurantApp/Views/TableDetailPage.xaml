@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.TableDetailPage"
+             Title="Detalii Masă">
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="tableNumberEntry" Placeholder="Număr masă" Keyboard="Numeric"/>
+        <Entry x:Name="seatsEntry" Placeholder="Număr locuri" Keyboard="Numeric"/>
+        <Picker x:Name="statusPicker" Title="Status masă">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Liber</x:String>
+                    <x:String>Ocupat</x:String>
+                    <x:String>Rezervat</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Salvează" Clicked="OnSaveClicked"/>
+    </StackLayout>
+</ContentPage>

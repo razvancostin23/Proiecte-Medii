@@ -1,0 +1,27 @@
+﻿@model Order
+
+<h1>Cancel Order</h1>
+
+<p>Are you sure you want to cancel this order?</p>
+
+<div>
+    <h4>Order ID:</h4>
+    <p>@Model.Id</p>
+
+    <h4>Order Date:</h4>
+    <p>@Model.OrderTime</p>
+
+    <h4>Ordered Products:</h4>
+    <ul>
+        @foreach (var item in Model.OrderDetails)
+        {
+            <li>@item.Product.Name - Quantity: @item.Quantity</li>
+        }
+    </ul>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Cancel Order</button>
+    <a asp-action="Index" class="btn btn-secondary">No, Go Back</a>
+</form>

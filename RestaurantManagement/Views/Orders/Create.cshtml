@@ -1,0 +1,25 @@
+﻿@model OrderViewModel
+
+<h1>Place Order</h1>
+
+<form asp-action="Create" method="post">
+    <input type="hidden" asp-for="UserId" />
+
+    <div class="form-group">
+        <label>Select Products:</label>
+
+        @for (int i = 0; i < Model.AvailableProducts.Count; i++)
+        {
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input"
+                       name="SelectedProductIds"
+                       value="@Model.AvailableProducts[i].Id" />
+                <label class="form-check-label">@Model.AvailableProducts[i].Name (@Model.AvailableProducts[i].StockQuantity in stock)</label>
+                <input type="number" name="SelectedQuantities" min="1" max="@Model.AvailableProducts[i].StockQuantity" value="1" class="form-control" />
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Place Order</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

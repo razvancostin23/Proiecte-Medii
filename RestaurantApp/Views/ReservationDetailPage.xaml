@@ -1,0 +1,12 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.ReservationDetailPage"
+             Title="Detalii Rezervare">
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="customerNameEntry" Placeholder="Nume client"/>
+        <Entry x:Name="phoneEntry" Placeholder="Număr telefon" Keyboard="Telephone"/>
+        <DatePicker x:Name="reservationDatePicker"/>
+        <TimePicker x:Name="reservationTimePicker"/>
+        <Button Text="Salvează" Clicked="OnSaveClicked"/>
+    </StackLayout>
+</ContentPage>

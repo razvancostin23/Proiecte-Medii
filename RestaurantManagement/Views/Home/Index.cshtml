@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Restaurant Management";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-primary">Welcome to Restaurant Management</h1>
+    <p class="lead">Easily manage your products, orders, and customers using our system.</p>
+
+    <div class="row mt-5">
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-shopping-cart"></i> Place a New Order</h4>
+                    <p class="card-text">Quickly create a new order and manage customer requests.</p>
+                    <a asp-controller="Orders" asp-action="Create" class="btn btn-success"><i class="fas fa-plus"></i> Add Order</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-list"></i> View Orders</h4>
+                    <p class="card-text">Check all your past and pending orders in one place.</p>
+                    <a asp-controller="Orders" asp-action="Index" class="btn btn-info"><i class="fas fa-eye"></i> View Orders</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-box"></i> Manage Products</h4>
+                    <p class="card-text">Add, edit, or remove products from your inventory.</p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-primary"><i class="fas fa-box-open"></i> Manage Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-tags"></i> Manage Categories</h4>
+                    <p class="card-text">Organize your products by categories for easier access.</p>
+                    <a asp-controller="Categories" asp-action="Index" class="btn btn-warning"><i class="fas fa-edit"></i> Manage Categories</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-warehouse"></i> Stock Management</h4>
+                    <p class="card-text">Monitor your inventory and update stock levels.</p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-dark"><i class="fas fa-cubes"></i> View Stock</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-calendar-alt"></i> Manage Reservations</h4>
+                    <p class="card-text">View and manage restaurant reservations.</p>
+                    <a asp-controller="ReservationWeb" asp-action="Index" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> View Reservations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

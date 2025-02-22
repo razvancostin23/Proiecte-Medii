@@ -1,0 +1,33 @@
+@model ProductViewModel
+
+<h1>Product Details</h1>
+
+<div>
+    <h4>Product Name:</h4>
+    <p>@Model.Name</p>
+
+    <h4>Price:</h4>
+    <p>@Model.Price.ToString("C")</p>
+
+    <h4>Categories:</h4>
+    <ul>
+        @if (Model.AvailableCategories.Any())
+        {
+            @foreach (var category in Model.AvailableCategories)
+            {
+                <li>@category.Name</li>
+            }
+        }
+        else
+        {
+            <li><span class="text-muted">No categories assigned</span></li>
+        }
+    </ul>
+    <h4>Stock Quantity</h4>
+    <p>@Model.StockQuantity</p>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</p>

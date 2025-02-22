@@ -1,0 +1,44 @@
+﻿@model IEnumerable<RestaurantManagement.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Reservations";
+}
+
+<h2>Reservations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Number of People</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.Date.ToShortDateString()</td>
+                <td>@reservation.NumberOfPeople</td>
+                <td>@reservation.Status</td>
+                <td>
+                    @if (reservation.Status == "Pending")
+                    {
+                        <form asp-action="UpdateStatus" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@reservation.Id" />
+                            <input type="hidden" name="status" value="Accepted" />
+                            <button type="submit" class="btn btn-success">Accept</button>
+                        </form>
+
+                        <form asp-action="UpdateStatus" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@reservation.Id" />
+                            <input type="hidden" name="status" value="Rejected" />
+                            <button type="submit" class="btn btn-danger">Reject</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

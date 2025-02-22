@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Views.OrderPage"
+             Title="Comenzi">
+    <StackLayout Padding="10">
+        <Button Text="Adaugă Comandă" Clicked="OnAddOrderClicked"/>
+        <ListView x:Name="orderListView" ItemSelected="OnOrderSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding ReservationId}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="{Binding OrderDate, StringFormat='Data: {0:dd/MM/yyyy HH:mm}'}" FontSize="16"/>
+                            <Label Text="{Binding TotalAmount, StringFormat='Total: {0:C}'}" FontSize="14" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
